@@ -1,0 +1,17 @@
+#spring:
+#  data:
+#    mongodb:
+#      username: anish
+#      password: anish123
+#      host: mongo
+#      port: 27017
+#      database: customer
+#      authentication-database: admin
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://anish:anish123@cluster0.e4bk8yz.mongodb.net/customer?retryWrites=true&w=majority&appName=Cluster0
+      auto-index-creation: true
+
+server:
+  port: 8090

@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/product
+    username: anish
+    password: anish
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+
+
+  flyway:
+    baseline-on-migrate: true
+    enabled: true
+    baseline-description: "init"
+    baseline-version: 0
+    user: anish
+    password: anish
+
+server:
+  port: 8050
+

@@ -1,0 +1,35 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://anish:anish123@cluster0.e4bk8yz.mongodb.net/notification?retryWrites=true&w=majority&appName=Cluster0
+      auto-index-creation: true
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.package: "*"
+        spring.json.type.mapping: orderConfirmation:com.backsmiths.notification.kafka.order.OrderConfirmation,PaymentConfirmation:com.backsmiths.notification.kafka.payment.PaymentConfirmation
+
+      group-id: paymentGroup,orderGroup
+      auto-offset-reset: earliest
+
+  mail:
+    host: localhost
+    port: 1025
+    username: anish
+    password: anish
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
+server:
+  port: 8040
