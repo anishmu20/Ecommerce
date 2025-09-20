@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://anish:anish123@cluster0.e4bk8yz.mongodb.net/notification?retryWrites=true&w=majority&appName=Cluster0
+      uri:
       auto-index-creation: true
 
   kafka:
